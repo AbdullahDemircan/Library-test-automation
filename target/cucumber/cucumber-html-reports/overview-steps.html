@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>23 Oct 2022, 16:57</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.accountHolderNameShouldBe(java.lang.String)</td>
+              <td>24</td>
+              <td class="duration" data-value="5056397054">5.056</td>
+              <td class="duration" data-value="5056397054">10.365</td>
+              <td class="duration" data-value="121353529300">2:1.353</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.dashboardShouldBeDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="4146880500">4.146</td>
+              <td class="duration" data-value="4146880500">4.146</td>
+              <td class="duration" data-value="4146880500">4.146</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.iAmOnTheLoginPage()</td>
+              <td>26</td>
+              <td class="duration" data-value="8886365">0.008</td>
+              <td class="duration" data-value="8886365">0.030</td>
+              <td class="duration" data-value="231045500">0.231</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.iLoginUsingAnd(java.lang.String,java.lang.String)</td>
+              <td>25</td>
+              <td class="duration" data-value="526326376">0.526</td>
+              <td class="duration" data-value="526326376">1.408</td>
+              <td class="duration" data-value="13158159400">13.158</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.setup()</td>
+              <td>28</td>
+              <td class="duration" data-value="4556647167">4.556</td>
+              <td class="duration" data-value="4556647167">9.320</td>
+              <td class="duration" data-value="127586120700">2:7.586</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.teardown()</td>
+              <td>28</td>
+              <td class="duration" data-value="868201889">0.868</td>
+              <td class="duration" data-value="868201889">1.561</td>
+              <td class="duration" data-value="24309652900">24.309</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.userAsLibrarianShouldSeeTheDashboard()</td>
+              <td>1</td>
+              <td class="duration" data-value="3943682300">3.943</td>
+              <td class="duration" data-value="3943682300">3.943</td>
+              <td class="duration" data-value="3943682300">3.943</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.userAsStudentShouldSeeTheDashboard()</td>
+              <td>1</td>
+              <td class="duration" data-value="6471184800">6.471</td>
+              <td class="duration" data-value="6471184800">6.471</td>
+              <td class="duration" data-value="6471184800">6.471</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.userEntersStudentPassword()</td>
+              <td>1</td>
+              <td class="duration" data-value="120386900">0.120</td>
+              <td class="duration" data-value="120386900">0.120</td>
+              <td class="duration" data-value="120386900">0.120</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.userEntersStudentUsername()</td>
+              <td>1</td>
+              <td class="duration" data-value="292899400">0.292</td>
+              <td class="duration" data-value="292899400">0.292</td>
+              <td class="duration" data-value="292899400">0.292</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.user_enters_librarian_password()</td>
+              <td>1</td>
+              <td class="duration" data-value="116669800">0.116</td>
+              <td class="duration" data-value="116669800">0.116</td>
+              <td class="duration" data-value="116669800">0.116</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.user_enters_librarian_username()</td>
+              <td>1</td>
+              <td class="duration" data-value="175394200">0.175</td>
+              <td class="duration" data-value="175394200">0.175</td>
+              <td class="duration" data-value="175394200">0.175</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.Login_StepDefinitions.user_is_on_the_login_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="25322050">0.025</td>
+              <td class="duration" data-value="25322050">0.031</td>
+              <td class="duration" data-value="50644100">0.050</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.SearchResults_StepDefinitions.i_click_on_link(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4038855100">4.038</td>
+              <td class="duration" data-value="4038855100">4.038</td>
+              <td class="duration" data-value="4038855100">4.038</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.SearchResults_StepDefinitions.i_login_as_a_librarian()</td>
+              <td>1</td>
+              <td class="duration" data-value="602444500">0.602</td>
+              <td class="duration" data-value="602444500">0.602</td>
+              <td class="duration" data-value="602444500">0.602</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">library.step_definitions.SearchResults_StepDefinitions.table_should_have_following_column_names(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="628079400">0.628</td>
+              <td class="duration" data-value="628079400">0.628</td>
+              <td class="duration" data-value="628079400">0.628</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>16</td>
+            <td>143</td>
+            <td class="duration">2.148</td>
+            <td class="duration">2:7.586</td>
+            <td class="duration">5:7.225</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
